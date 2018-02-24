@@ -14,18 +14,33 @@ UMyPool::UMyPool()
 }
 
 
-//AActor* UMyPool::Checkout()
-// {
-//	return nullptr;
-	//}
+AActor* UMyPool::Checkout()
+ {
+	if (Pool.Num() == 0)
+		 {
+		return nullptr;
+		}
+	return Pool.Pop();
 
-//void UMyPool::Return(AActor* ActorToReturn)
- //{
-	
-	//	}
+	}
 
-//void UMyPool::Add(AActor* ActorToAdd)
- //{
-	
-	//	}
+void UMyPool::Return(AActor* ActorToReturn)
+{
+	if (ActorToReturn == nullptr) {
+		UE_LOG(LogTemp, Warning, TEXT("[%s] Returned null actor."), *GetName());
+		return;
+		
+	}
+	Add(ActorToReturn);
+		}
+
+void UMyPool::Add(AActor* ActorToAdd)
+{
+	if (ActorToAdd == nullptr) {
+		UE_LOG(LogTemp, Warning, TEXT("[%s] Added null actor."), *GetName());
+		return;
+		
+	}
+	Pool.Push(ActorToAdd);
+		}
 

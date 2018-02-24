@@ -16,11 +16,12 @@ public:
 	// Sets default values for this component's properties
 	UMyPool();
 
-	//AActor* Checkout();
-	//void Return(AActor* ActorToReturn);
+	AActor* Checkout();
+	void Return(AActor* ActorToReturn);
 	
-	//void Add(AActor* ActorToAdd);
-
+	void Add(AActor* ActorToAdd);
+private:
+	TArray<AActor*> Pool;
 		
 	
 };

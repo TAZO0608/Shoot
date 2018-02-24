@@ -19,13 +19,13 @@ class SHOOT_API AInfinitTerrainGameMode : public AShootGameMode
 	
 		public:
 			AInfinitTerrainGameMode();
-			//UFUNCTION(BlueprintCallable, Category = "Bounds Pool")
-				// void PopulateBoundsVolumePool();
+			UFUNCTION(BlueprintCallable, Category = "Bounds Pool")
+		    void PopulateBoundsVolumePool();
 protected:
-	//UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Pool")
-	//UMyPool* NavMeshBoundsVolumePool;
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Pool")
+	UMyPool* NavMeshBoundsVolumePool;
 private:
-		//void AddToPool( ANavMeshBoundsVolume *VolumeToAdd);
+		void AddToPool( ANavMeshBoundsVolume *VolumeToAdd);
 	
 	
 };
