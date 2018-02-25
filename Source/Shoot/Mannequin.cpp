@@ -72,6 +72,7 @@ void AMannequin::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent
 
 void AMannequin::UnPossessed() {
 	Super::UnPossessed();
+	if (Gun == nullptr) { return; }
 	Gun->AttachToComponent(GetMesh(), FAttachmentTransformRules(EAttachmentRule::SnapToTarget, true), TEXT("GripPoint_0"));
 	
 }
